@@ -15,7 +15,14 @@ table! {
     }
 }
 
-allow_tables_to_appear_in_same_query!(
-    messages,
-    users,
-);
+table! {
+  eatbook (id) {
+    id -> Int8,
+    author -> Int8,
+    description -> Varchar,
+    address -> Varchar,
+    tags -> Array<Varchar>,
+  }
+}
+
+allow_tables_to_appear_in_same_query!(messages, users,);
